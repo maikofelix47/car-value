@@ -7,6 +7,7 @@ import { Serialize } from '../interceptors/serlialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 
 @Controller('auth')
+@Serialize(UserDto)
 export class UsersController {
   constructor(private userService: UsersService){}
   
@@ -14,8 +15,7 @@ export class UsersController {
   createUser(@Body() body: CreateUserDto){
    this.userService.create(body.email,body.password);
   }
-
-  @Serialize(UserDto)
+  
   @Get('/:id')
   async findUserById(@Param('id') id: string){
     const userId = parseInt(id);
