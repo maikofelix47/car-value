@@ -30,6 +30,8 @@ export class AuthService{
        //create a new user and save
 
        const user = this.usersService.create(email,result);
+
+       return user;
    }
 
    signIn(){
