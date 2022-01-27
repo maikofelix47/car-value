@@ -8,7 +8,7 @@ content-Type: application/json
 
 ### Find user with specific id
 
-GET http://localhost:5000/auth/3
+GET http://localhost:5000/auth/4
 
 
 ### Find users by email
