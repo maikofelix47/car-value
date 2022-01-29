@@ -18,6 +18,11 @@ export class UsersController {
   createUser(@Body() body: CreateUserDto){
    return this.authService.signUp(body.email,body.password);
   }
+
+  @Post('sign-in')
+  signIn(@Body() body: CreateUserDto){
+   return this.authService.signIn(body.email,body.password);
+  }
   
   @Get('/:id')
   async findUserById(@Param('id') id: string){
