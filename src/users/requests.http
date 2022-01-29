@@ -2,8 +2,8 @@ POST http://localhost:5000/auth/signup
 content-Type: application/json
 
 {
-  "email":"testmail@email.com",
-  "password": "test@123"
+  "email":"test@email.com",
+  "password": "12345"
 }
 
 ### Find user with specific id
@@ -42,7 +42,7 @@ POST http://localhost:5000/auth/sign-in
 content-Type: application/json
 
 {
-  "email":"testmail@email.com",
-  "password": "test@123"
+  "email":"test@email.com",
+  "password": "12345"
 }
 
