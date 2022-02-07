@@ -46,3 +46,16 @@ content-Type: application/json
   "password": "12345"
 }
 
+### Signout
+
+POST http://localhost:5000/auth/sign-out
+
+### Get curret user
+
+POST http://localhost:5000/auth/current-user
+
+
+### Get current user
+GET http://localhost:5000/auth/who-am-i
+
+
