@@ -1,12 +1,13 @@
 import { Controller, Post, Body, UseGuards, Patch, Param, Get } from '@nestjs/common';
 import { CreateReportDto } from './dtos/create-report.dto';
 import { ReportsService } from './reports.service';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { AuthGuard } from '../guards/auth.guard';
 import { CurrentUser } from '../users/decorators/current-user-decorator';
 import { User } from 'src/users/user.entity';
 import { ReportDto } from './dtos/report.dto';
 import { Serialize } from '../interceptors/serlialize.interceptor';
 import { ApproveReportDto } from './dtos/approve-reports.dto';
+import { AdminGuard } from '../guards/admin.guard';
 
 @Controller('reports')
 export class ReportsController {
@@ -22,6 +23,7 @@ export class ReportsController {
 
 
   @Get('/:id')
+  @UseGuards(AdminGuard)
   getReport(@Param('id') id: string){
      return this.reportsService.findOne(id);
   }

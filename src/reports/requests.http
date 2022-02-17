@@ -13,7 +13,7 @@ content-type: application/json
 
 ### Approve an exisitinng report
 
-PATCH http://localhost:5000/reports/approve/4
+PATCH http://localhost:5000/reports/approve/1
 content-type: application/json
 
 {
@@ -22,4 +22,4 @@ content-type: application/json
 
 
 ### Get specific report
-GET http://localhost:5000/reports/3
+GET http://localhost:5000/reports/1
