@@ -3,7 +3,7 @@ import { CreateReportDto } from './dtos/create-report.dto';
 import { ReportsService } from './reports.service';
 import { AuthGuard } from '../guards/auth.guard';
 import { CurrentUser } from '../users/decorators/current-user-decorator';
-import { User } from 'src/users/user.entity';
+import { User } from '../users/user.entity';
 import { ReportDto } from './dtos/report.dto';
 import { Serialize } from '../interceptors/serlialize.interceptor';
 import { ApproveReportDto } from './dtos/approve-reports.dto';
@@ -38,7 +38,7 @@ export class ReportsController {
   @Patch('approve/:id')
   approveReport(@Param('id') id: string, @Body() body: ApproveReportDto){
 
-    const report = this.reportsService.changeApproval(id, body.approved);
+    return this.reportsService.changeApproval(id, body.approved);
 
   }
 
